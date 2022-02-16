@@ -13,6 +13,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - 'config/routes.rb'
+    - 'test/**/*'
 
 Metrics/ClassLength:
   Exclude:
@@ -25,7 +26,7 @@ Rails/CreateTableWithTimestamps:
   Enabled: false
 
 Rails/SkipsModelValidations:
-  AllowedMethods: [insert_all, update_all]
+  AllowedMethods: [insert_all, update_all, delete_all]
 
 Style/ClassAndModuleChildren:
   Enabled: False
