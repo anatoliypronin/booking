@@ -32,5 +32,6 @@ group :development do
   gem 'rubocop-rails'
   gem 'web-console'
 
+  gem 'listen'
   gem 'spring'
 end

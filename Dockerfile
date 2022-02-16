@@ -8,10 +8,10 @@ ADD . /app
 WORKDIR /app
 
 # Выполняет команду 'bundle install' - установка гемов
-#RUN bundle install
+RUN bundle install
 
 # Указывает на необходимость открыть порт наружу
-#EXPOSE 8080
+EXPOSE 8080
 
 # Описывает команду с аргументами, которую нужно выполнить когда контейнер будет запущен
-#CMD ["bash", "/app/scripts/run_puma.sh"]
+CMD ["bash", "/app/scripts/run_puma.sh"]
