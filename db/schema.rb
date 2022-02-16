@@ -81,7 +81,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.jsonb "contact_data", comment: "Passenger contact information"
   end
 
-  add_foreign_key "boarding_passes", "ticket_flights", column: "ticket_no", primary_key: "ticket_no", name: "boarding_passes_ticket_no_fkey"
+  #add_foreign_key "boarding_passes", "ticket_flights", column: "ticket_no", primary_key: "ticket_no", name: "boarding_passes_ticket_no_fkey"
+  execute "ALTER TABLE ONLY boarding_passes ADD CONSTRAINT boarding_passes_ticket_no_fkey FOREIGN KEY (ticket_no, flight_id) REFERENCES ticket_flights(ticket_no, flight_id);"
   add_foreign_key "flights", "aircrafts_data", column: "aircraft_code", primary_key: "aircraft_code", name: "flights_aircraft_code_fkey"
   add_foreign_key "flights", "airports_data", column: "arrival_airport", primary_key: "airport_code", name: "flights_arrival_airport_fkey"
   add_foreign_key "flights", "airports_data", column: "departure_airport", primary_key: "airport_code", name: "flights_departure_airport_fkey"
