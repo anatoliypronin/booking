@@ -1,6 +1,16 @@
 # Задаёт базовый (родительский) образ
 FROM ruby:2.7.5
 
+# Установка postgresql-client
+RUN apt update && \
+    apt -y install postgresql-client
+
+# postgresql-client
+#RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && \
+  #wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+  #apt-get update -qq && \
+  #apt-get -y install build-essential postgresql-client-10
+
 # Копирует файлы и папки в папку /app
 ADD . /app
 
