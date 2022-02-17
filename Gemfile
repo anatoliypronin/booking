@@ -21,6 +21,8 @@ group :development, :test do
   gem 'faker'
 
   gem 'rack-mini-profiler'
+  gem 'flamegraph'
+  gem 'stackprof'
   gem 'memory_profiler'
 
   gem 'bullet'
