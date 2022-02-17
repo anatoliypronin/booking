@@ -1,10 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
--- Dumped by pg_dump version 14.2 (Debian 14.2-1.pgdg110+1)
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -253,6 +246,18 @@ COMMENT ON COLUMN bookings.airports.coordinates IS 'Airport coordinates (longitu
 --
 
 COMMENT ON COLUMN bookings.airports.timezone IS 'Airport time zone';
+
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: bookings; Owner: -
+--
+
+CREATE TABLE bookings.ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
 
 
 --
@@ -759,6 +764,15 @@ COMMENT ON COLUMN bookings.routes.days_of_week IS 'Days of week on which flights
 
 
 --
+-- Name: schema_migrations; Type: TABLE; Schema: bookings; Owner: -
+--
+
+CREATE TABLE bookings.schema_migrations (
+    version character varying NOT NULL
+);
+
+
+--
 -- Name: seats; Type: TABLE; Schema: bookings; Owner: -
 --
 
@@ -926,6 +940,14 @@ ALTER TABLE ONLY bookings.airports_data
 
 
 --
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: bookings; Owner: -
+--
+
+ALTER TABLE ONLY bookings.ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
 -- Name: boarding_passes boarding_passes_flight_id_boarding_no_key; Type: CONSTRAINT; Schema: bookings; Owner: -
 --
 
@@ -971,6 +993,14 @@ ALTER TABLE ONLY bookings.flights
 
 ALTER TABLE ONLY bookings.flights
     ADD CONSTRAINT flights_pkey PRIMARY KEY (flight_id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: bookings; Owner: -
+--
+
+ALTER TABLE ONLY bookings.schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
 
 
 --
@@ -1065,3 +1095,4 @@ ALTER TABLE ONLY bookings.tickets
 -- PostgreSQL database dump complete
 --
 
+SET search_path TO bookings, public;

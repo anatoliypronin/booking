@@ -10,12 +10,14 @@ gem 'rails', '~> 6.1.4'
 gem 'bootsnap', require: false
 gem 'composite_primary_keys'
 
-gem 'sass-rails'
-gem 'turbolinks'
-gem 'webpacker'
+# gem 'sass-rails'
+# gem 'turbolinks'
+# gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
