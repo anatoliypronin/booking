@@ -9,6 +9,7 @@ gem 'rails', '~> 6.1.4'
 
 gem 'bootsnap', require: false
 gem 'composite_primary_keys'
+gem "responders"
 
 # gem 'sass-rails'
 # gem 'turbolinks'
@@ -18,6 +19,11 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+
+  gem 'rack-mini-profiler'
+  gem 'memory_profiler'
+
+  gem 'bullet'
 end
 
 group :development do

@@ -1096,3 +1096,6 @@ ALTER TABLE ONLY bookings.tickets
 --
 
 SET search_path TO bookings, public;
+
+
+
