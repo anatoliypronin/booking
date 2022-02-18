@@ -6,6 +6,5 @@ class Api::V1::AirportsControllerTest < ActionDispatch::IntegrationTest
 
     get api_v1_airports_path
     assert_response :success
-    p json_response
   end
 end
