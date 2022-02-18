@@ -7,8 +7,8 @@
 ### Сколько мест осталось незанятыми вчера на рейсе PG0404
 ####
       Seat.joins(aircraft: :flights)
-      .where(flights: {flight_no: "PG0404"})
-      .where("DATE(flights.scheduled_departure) = DATE(bookings.now()) - INTERVAL '1 day'").count -
+           .where(flights: {flight_no: "PG0404"})
+           .where("DATE(flights.scheduled_departure) = DATE(bookings.now()) - INTERVAL '1 day'").count -
       BoardingPass.joins(ticket_flight: {flight: :aircraft})
                   .joins("RIGHT OUTER JOIN seats ON boarding_passes.seat_no = seats.seat_no AND seats.aircraft_code = flights.aircraft_code")
                   .where(flights: {flight_no: "PG0404"})
