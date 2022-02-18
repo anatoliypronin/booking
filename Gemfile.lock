@@ -64,7 +64,7 @@ GEM
     benchmark-bigo (1.0.1)
       benchmark-ips (~> 2.0)
       chartkick (~> 1.2)
-    benchmark-ips (2.9.3)
+    benchmark-ips (2.10.0)
     bindex (0.8.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
@@ -159,9 +159,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.2.1)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
     rexml (3.2.5)
     rubocop (1.25.1)
       parallel (~> 1.10)
@@ -226,7 +223,6 @@ DEPENDENCIES
   puma
   rack-mini-profiler
   rails (~> 6.1.4)
-  responders
   rubocop
   rubocop-rails
   spring

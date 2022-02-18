@@ -9,7 +9,6 @@ gem 'rails', '~> 6.1.4'
 
 gem 'bootsnap', require: false
 gem 'composite_primary_keys'
-gem "responders"
 
 # gem 'sass-rails'
 # gem 'turbolinks'
@@ -20,10 +19,10 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
 
-  gem 'rack-mini-profiler'
   gem 'flamegraph'
-  gem 'stackprof'
   gem 'memory_profiler'
+  gem 'rack-mini-profiler'
+  gem 'stackprof'
 
   gem 'bullet'
 end
