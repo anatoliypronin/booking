@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4'
 
 gem 'bootsnap', require: false
 gem 'composite_primary_keys'
+gem 'kaminari'
+gem 'ransack'
 
 # gem 'sass-rails'
 # gem 'turbolinks'

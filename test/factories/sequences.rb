@@ -18,4 +18,24 @@ FactoryBot.define do
   sequence :book_ref do |n|
     format('%06d', n)
   end
+
+  sequence :passenger_id do
+    Faker::IDNumber.valid
+  end
+
+  sequence :first_name do
+    Faker::Name.first_name
+  end
+
+  sequence :last_name do
+    Faker::Name.last_name
+  end
+
+  sequence :email do
+    Faker::Internet.email
+  end
+
+  sequence :phone do
+    Faker::PhoneNumber.cell_phone_in_e164
+  end
 end
